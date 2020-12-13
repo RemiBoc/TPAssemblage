@@ -113,11 +113,8 @@ def remove_paths(graph, path_list, delete_entry_node, delete_sink_node):
     """Removes pathes in path_list from graph, and removes starting and sink nodes if required.
     """
     for path in path_list:
-        for i in range(len(path) - 1):
-            try:
-                graph.remove_edge(path[i], path[i + 1])
-            except nx.NetworkXNoPath:
-                continue
+        for i in range(1, len(path) - 1):
+            graph.remove_node(path[i])
 
     if delete_entry_node:
         for path in path_list:
