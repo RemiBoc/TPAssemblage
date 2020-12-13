@@ -139,10 +139,10 @@ def select_best_path(graph, path_list, path_length, weight_avg_list,
     selected_paths = []
     selected_paths_lengths = []
 
-    min_weight = min([path_length[i] * weight_avg_list[i] for i in range(len(path_length))])
+    max_weight = max([path_length[i] * weight_avg_list[i] for i in range(len(path_length))])
 
     for i in range(len(path_list)):
-        if path_length[i] * weight_avg_list[i] == min_weight:
+        if path_length[i] * weight_avg_list[i] == max_weight:
             selected_paths.append(path_list[i])
             selected_paths_lengths.append(path_length[i])
 
