@@ -154,7 +154,7 @@ def select_best_path(graph, path_list, path_length, weight_avg_list,
         selected_paths = [selected_paths[i] for i in range(len(selected_paths)) if selected_paths_lengths[i] == min_len]
 
         if (len(selected_paths)) > 1:
-            random_int = random.randint(len(selected_paths))
+            random_int = random.randint(len(selected_paths)) - 1
 
             path_list.remove(selected_paths[random_int])
 
